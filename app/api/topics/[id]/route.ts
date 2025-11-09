@@ -3,7 +3,7 @@ import Topic from "@/models/topic";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
-  request: Request,
+  request: NextRequest,
   context: { params: Promise<{ id: string }> } // still keep context
 ) {
 
