@@ -1,6 +1,6 @@
 import connectMongoDB from "@/libs/mongodb";
 import Topic from "@/models/topic";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(
   request: Request,
@@ -35,7 +35,7 @@ export async function PUT(
 
 // New GET function to fetch a single topic by ID
 export async function GET(
-  request: Request, context: { params: { id: string } } 
+  request: NextRequest, context: { params: Promise<{ id: string }> }
 ) {
     try{
 
